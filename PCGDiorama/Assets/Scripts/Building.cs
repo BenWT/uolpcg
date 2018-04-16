@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Building : MonoBehaviour {
 
-	Generator generator;
+	public float width;
+	public float length;
 
-	int randomInt;
-	float randomFloat;
+	public bool left = false, right = false, up = false, down = false;
 
-	public void Init(Generator generator) {
-		this.generator = generator;
-
-		this.randomInt = generator.GetInt(0, 12);
-		this.randomFloat = generator.GetFloat(0.0f, 12.0f);
-
-		Debug.Log(randomInt);
-		Debug.Log(randomFloat);
+	public bool ClearConnection() {
+		if (!left || !right || !up || !down) return true;
+		else return false;
 	}
 }
